@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CheckOutController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TransactionController;
 use Illuminate\Support\Facades\Route;
@@ -15,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::middleware('guest')->get('/', function () {
     return view('auth.login');
 });
 
@@ -32,5 +33,10 @@ Route::middleware('auth')->group(function () {
 Route::middleware('auth')->controller(TransactionController::class)->group(function () {
     Route::get('/transactions', 'index')->name('transactions');
 });
+
+Route::middleware('auth')->controller(CheckOutController::class)->group(function () {
+    Route::get('/checkout/{slug}', 'checkout')->name('checkout');
+});
+
 
 require __DIR__.'/auth.php';

@@ -17,8 +17,8 @@
                 <header>
                     <a href="/" class="">
                         
-                        <img src="{{ asset('images/logo/logo-color.svg') }}" class="block dark:hidden" alt="Logo" />
-                        <img src="{{ asset('images/logo/logo-white.svg') }}" class="hidden dark:block" alt="Logo" />
+                        <img src="{{ asset('images/logo/logo-color.png') }}" class="block dark:hidden" alt="Logo" />
+                        <img src="{{ asset('images/logo/logo-white.png') }}" class="hidden dark:block" alt="Logo" />
                     </a>
                 </header>
 
