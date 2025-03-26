@@ -35,7 +35,8 @@ Route::middleware('auth')->controller(TransactionController::class)->group(funct
 });
 
 Route::middleware('auth')->controller(CheckOutController::class)->group(function () {
-    Route::get('/checkout/{slug}', 'checkout')->name('checkout');
+    Route::post('/checkout', 'checkout')->name('checkout');
+    Route::get('/checkout/{slug}', 'show')->name('checkout.show');
 });
 
 
